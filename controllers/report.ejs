@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: #f1f1f1;
+        padding: 20px;
+      }
+
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #333;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .total {
+        text-align: right;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .thank-you {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+      }
+
+      /* Custom Bill Design */
+      .bill-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .header img {
+        width: 150px;
+      }
+
+      .header h3 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .customer-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .customer-info p {
+        margin: 0;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .product-table {
+        width: 100%;
+        background-color: #fff;
+        border-collapse: collapse;
+      }
+
+      .product-table th,
+      .product-table td {
+        text-align: center;
+        padding: 12px;
+        border: 1px solid #ccc;
+      }
+
+      .product-table th {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .product-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .total-amount {
+        text-align: right;
+        font-size: 20px;
+        margin-top: 20px;
+        color: #333;
+      }
+
+      .thank-you-message {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bill-container"><span><img src="../assets/logo.png"></span>
+      <h3 style="color:black"><b>SPICY</b> <span>E</span><b style="color:rgb(110, 18, 18)">ATS</b></h3>
+
+      <table class="customer-info">
+        <tr>
+          <th>Name:</th>
+          <td><%= name %></td>
+          <th>Email:</th>
+          <td><%= email %></td>
+        </tr>
+        <tr>
+          <th>Contact Number:</th>
+          <td><%= contactNumber %></td>
+          <th>Payment Method:</th>
+          <td><%= payementMethod %></td>
+        </tr>
+      </table>
+
+      <h3>Product Details</h3>
+      <table class="product-table">
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+        <% productDetails.forEach(product => { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.category %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.price %></td>
+          <td><%= product.subtotal %></td>
+        </tr>
+        <% }); %>
+      </table>
+
+      <div class="total-amount">
+        <h3>Total: <%= totalAmount %></h3>
+      </div>
+
+      <div class="thank-you-message">
+        <h3>Thank you for visiting</h3>
+      </div>
+    </div>
+  </body>
+</html>
