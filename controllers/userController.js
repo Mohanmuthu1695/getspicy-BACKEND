@@ -97,7 +97,7 @@ const userlogin = async (req, res) => {
               result[0].email +
               "<br><b>Password: </b>" +
               result[0].password +
-              '<br>Click the following link to login <a href="#">GET SPICY </a></p>',
+              '<br>Click the following link to login <a href="localhost:4200">GET SPICY </a></p>',
           };
   
           transporter.sendMail(mailerOptions, function (error, info) {
